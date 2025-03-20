@@ -53,5 +53,16 @@ def div(num1, num2):
     except ValueError:
         return 'erro'
 
+@app.route('/verifica/<num1>')
+def verifica(num1):
+    try:
+        num1 = int(num1)
+        if num1 % 2 == 0:
+            return str(num1) +' é par'
+        else:
+            return str(num1) + ' é impar'
+    except ValueError:
+        return 'erro'
+
 if __name__ == '__main__':
     app.run(debug=True)
